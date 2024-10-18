@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <header>
+        <h1 class="heading">ADMIN DASHBOARD</h1>
+    </header>
+  
+    
+    <section>
+       <div> <form action="/Search" method="GET">
+            <input type="text" name="_id" placeholder="ID" required>
+            <button type="submit">Search</button>
+        </form>
+         <!-- Search by ID with Dashboard Button -->
+
+            <!-- Go to Dashboard Button -->
+            <a href="/" class="dashboard-button">Go to Dashboard</a>
+        </div><br><br>
+        
+        <a href="/add" class="dashboard-button">Add-user</a><br><br>
+      
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Power</th>
+                    <th>Hobbies</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% data.forEach(user => { %>
+                    <tr>
+                        <td><b><%= user._id %></b></td>
+                        <td><b><%= user.name %></b></td>
+                        <td><b><%= user.age %></b></td>
+                        <td><b><%= user.power %></b></td>
+                        <td><b><%= user.hobbies %></b></b>
+                        <td>
+                            <!-- Update Button: Navigates to update page -->
+                            <a href="/update/<%= user._id %>" class="update-button">Update</a>
+
+                            <!-- Delete Form -->
+                            <form action="/delete/<%= user._id %>" method="POST" style="display:inline;">
+                                <button type="submit" class="delete-button">Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                <% }) %>
+                
+            </tbody>
+        </table>
+    </section>
+
+
+    
+</body>
+</html>

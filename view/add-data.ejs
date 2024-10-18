@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New User</title>
+    <style>
+        /* General Body Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color:lightyellow;
+    color: black;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Container for Form */
+.form-container {
+    background-color:lightpink;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    width: 100%;
+}
+
+/* Header Styles */
+.form-container h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Input Fields */
+.form-container input[type="text"],
+.form-container input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #7f8c8d;
+    border-radius: 5px;
+    background-color:lightyellow;
+    color: black;
+}
+
+/* Submit Button */
+.form-container button {
+    width: 100%;
+    padding: 10px;
+    background-color:deeppink;
+    border: none;
+    border-radius: 10px;
+    color: black;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* Hover Effect for Button */
+.form-container button:hover {
+    background-color:lightsteelblue;
+}
+
+/* Back to Dashboard Link */
+.form-container .back-link {
+    display: block;
+    text-align: center;
+    margin-top: 15px;
+    text-decoration: none;
+    color:navy;
+}
+
+.form-container .back-link:hover {
+    text-decoration: underline;
+}
+
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1>Add New User</h1>
+        <form action="/add" method="POST">
+            <input type="text" name="name" placeholder="Name" required>
+            <input type="number" name="age" placeholder="Age" required>
+            <input type="text" name="power" placeholder="Power" required>
+            <input type="text" name="hobbies" placeholder="Hobbies" required>
+            <button type="submit">Add User</button>
+        </form>
+        <a href="/" class="back-link">Back to Dashboard</a>
+    </div>
+</body>
+</html>
